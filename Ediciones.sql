@@ -87,5 +87,20 @@ CREATE TABLE Prerrequisitos(
  )
  ENGINE = InnoDB;
  
+ CREATE TABLE Matriculas(
+ NIF_Alumno VARCHAR (12),
+ CodEdicion int,
+ 
+ CONSTRAINT FK_NIFAlumno FOREIGN KEY (NIF_Alumno) 
+ REFERENCES Empleados (NIF)
+ ON DELETE CASCADE,
+ CONSTRAINT CodEdicion FOREIGN KEY (CodEdicion) 
+ REFERENCES Ediciones (CodEdicion)
+ ON DELETE CASCADE
+ )
+ ENGINE = InnoDB;
+ 
+ 
+ 
 
  
